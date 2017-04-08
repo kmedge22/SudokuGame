@@ -10,9 +10,9 @@ public class Column {
     }
 
     public void getSqList() {
-        System.out.println("COL " + colValue);
+//        System.out.println("COL " + colValue);
         for (Square s : sqList) {
-            System.out.println(s.getRowValue() + " " + s.getColValue());
+//            System.out.println(s.getRowValue() + " " + s.getColValue());
         }
     }
     public int getColValue() {

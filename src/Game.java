@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,49 +27,34 @@ public class Game extends JFrame{
         board.setLayout(new GridLayout(9, 9));
 
         Square[] squareArray = new Square[81];
-        Column[] columnArray = new Column[9];
-        Row[] rowArray = new Row[9];
-
-        for(int i = 0; i < 9; i++){
-            columnArray[i] = new Column(i);
-        }
-
-        for(int i = 0; i < 9; i++){
-            rowArray[i] = new Row(i);
-        }
-
-
+        Square[][] boardArray = new Square[9][9];
 
         for(int i = 0; i < 9; i++){
             for(int j = 0; j < 9; j++){
                 Square testSquare = new Square(i, j);
+                boardArray[i][j] = testSquare;
+//                System.out.println(testSquare);
+//                testSquare.setText(Integer.toString(i) + Integer.toString(j));
 
-                columnArray[j].addSquare(testSquare);
-
-                testSquare.setText(Integer.toString(i) + Integer.toString(j));
-
-                //Coloring the Background
-                //Box 2
-                if(i <= 2 && 3 <= j && j <= 5){
-                    testSquare.setBackground(Color.green);
-                }
-                //Box 3 and 5
-                if((3 <= i && i <= 5) && !(3 <= j && j <= 5)){
-                    testSquare.setBackground(Color.green);
-                }
-                //Box 8
-                if(6 <= i && 3 <= j && j <= 5){
-                    testSquare.setBackground(Color.green);
-                }
+//                //Coloring the Background
+//                //Box 1
+//                if(i <= 2 && 3 <= j && j <= 5){
+//                    testSquare.setBackground(Color.green);
+//                }
+//                //Box 2 and 4
+//                if((3 <= i && i <= 5) && !(3 <= j && j <= 5)){
+//                    testSquare.setBackground(Color.green);
+//                }
+//                //Box 7
+//                if(6 <= i && 3 <= j && j <= 5){
+//                    testSquare.setBackground(Color.green);
+//                }
 
 
 
                 board.add(testSquare);
             }
-        }
 
-        for(int i = 0; i < 9; i++){
-            columnArray[i].getSqList();
         }
 
 //        Square testSquare = new Square();
@@ -81,6 +67,8 @@ public class Game extends JFrame{
         board.setVisible(true);
 
     }
+
+
 
     public static void main(String[] args){
 

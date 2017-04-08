@@ -10,7 +10,7 @@ public class Row {
     }
 
     public void getSqList() {
-        System.out.print(rowValue);
+//        System.out.print(rowValue);
         for (Square s : sqList) {
             System.out.println(s.getRowValue() + s.getColValue());
         }
