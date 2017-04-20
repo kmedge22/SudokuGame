@@ -13,9 +13,7 @@ public class Square extends JFormattedTextField {
     private final int colValue;
     private final int boxValue;
 
-    private Square[] row;
-    private Square[] col;
-    private Square[] boxes;
+
 
     public Square(int r, int c) {
         rowValue = r;
@@ -34,42 +32,6 @@ public class Square extends JFormattedTextField {
             availNumbers.add(Integer.toString(i + 1));
         }
 
-    }
-
-    public Square[] getRow() {
-        return row;
-    }
-
-    public void setRow(Square[] row) {
-        this.row = row;
-    }
-
-    public Square[] getCol() {
-        return col;
-    }
-
-    public void setCol(Square[] col) {
-        this.col = col;
-    }
-
-    public void addSquareToRow(int index, Square aSquare){
-        row[index]= aSquare;
-    }
-
-    public void addSquareToCol(int index, Square aSquare){
-        col[index]= aSquare;
-    }
-
-    public void addSquareToBox(int index, Square aSquare){
-        boxes[index]= aSquare;
-    }
-
-    public Square[] getBoxes() {
-        return boxes;
-    }
-
-    public void setBoxes(Square[] boxes) {
-        this.boxes = boxes;
     }
 
     public Character getValue() {
@@ -95,6 +57,18 @@ public class Square extends JFormattedTextField {
         } else {
             return false;
         }
+    }
+
+    /**
+     * Used to verify if the user's input is equal to the Square's text value.
+     * @param c User's input
+     * @return boolean true/false
+     */
+    public boolean checkText(String c){
+        if(this.getText().equals(c)){
+            return true;
+        }
+        return false;
     }
 
     /**
