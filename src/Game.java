@@ -65,9 +65,9 @@ public class Game extends JFrame {
                         for (int l = 0; l < 9; l++) {
                             for (int k = 0; k < 9; k++) {
                                 if (sq.compareSquare(aBoard.getSquare(l,k))) {
-                                    if (aBoard.getSquare(l,k).getText().equals(Character.toString(c)) ||
+                                    if (aBoard.getSquare(l,k).checkText(Character.toString(c)) ||
                                             !numerals.contains(c) ||
-                                            !sq.getText().equals("")) {
+                                            !sq.checkText("")) {
                                         keyEvent.consume();
                                     }
                                 }
